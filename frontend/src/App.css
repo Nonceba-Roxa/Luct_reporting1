@@ -1,0 +1,690 @@
+/* App.css - LUCT Faculty System */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --luct-primary: #5273a1;    /* light blue - LUCT primary */
+  --luct-secondary: #051e49;  /* Dark blue */
+  --luct-accent: #e53e3e;     /* Red accent */
+  --luct-light: #f7fafc;      /* Light background */
+  --luct-white: #ffffff;      /* White */
+  --luct-text: #2d3748;       /* Text color */
+  --luct-text-light: #718096; /* Light text */
+  
+  /* Navbar and Footer specific colors */
+  --navbar-bg: #1a365d;       /* Dark blue for navbar */
+  --footer-bg: #2d3748;       /* Dark gray-blue for footer */
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--luct-light);
+  color: var(--luct-text);
+  line-height: 1.6;
+  padding-top: 70px;
+}
+
+/* Sticky Navbar Styles */
+.navbar-custom {
+  background: var(--navbar-bg);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  padding: 0.8rem 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1030;
+  transition: all 0.3s ease;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: var(--luct-white) !important;
+  transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover {
+  transform: translateY(-1px);
+}
+
+.navbar-logo {
+  height: 40px;
+  margin-right: 15px;
+  transition: transform 0.3s ease;
+}
+
+.navbar-logo:hover {
+  transform: scale(1.05);
+}
+
+.navbar-nav .nav-link {
+  color: var(--luct-white) !important;
+  font-weight: 500;
+  margin: 0 8px;
+  padding: 8px 16px !important;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  background-color: rgba(255,255,255,0.1);
+  transform: translateY(-1px);
+}
+
+.navbar-nav .nav-link.active {
+  background-color: rgba(255,255,255,0.15);
+}
+
+/* Mobile menu styles */
+.navbar-toggler {
+  border: 1px solid rgba(255,255,255,0.3);
+  padding: 4px 8px;
+}
+
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 2px rgba(255,255,255,0.25);
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Footer Styles */
+.footer-custom {
+  background: var(--footer-bg);
+  color: var(--luct-white);
+  padding: 2rem 0;
+  margin-top: auto;
+}
+
+.footer-content {
+  text-align: center;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 1rem;
+}
+
+.footer-links a {
+  color: var(--luct-white);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #e2e8f0;
+  text-decoration: underline;
+}
+
+/* Footer Modal Styles */
+.modal-header {
+  background: var(--luct-primary);
+  color: var(--luct-white);
+  border-bottom: none;
+}
+
+.modal-header .btn-close {
+  filter: invert(1);
+}
+
+.modal-title {
+  font-weight: 600;
+}
+
+.about-content h6,
+.contact-content h6,
+.privacy-content h6,
+.terms-content h6 {
+  color: var(--luct-primary);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.about-content ul,
+.contact-content ul,
+.privacy-content ul,
+.terms-content ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.about-content li,
+.contact-content li,
+.privacy-content li,
+.terms-content li {
+  margin-bottom: 0.25rem;
+}
+
+.contact-content p {
+  margin-bottom: 0.5rem;
+}
+
+.privacy-content .bg-light,
+.terms-content .bg-light {
+  background-color: var(--luct-light) !important;
+  border-left: 3px solid var(--luct-primary);
+}
+
+/* Footer Links Hover Effect */
+.footer-links a {
+  position: relative;
+  padding: 0.25rem 0;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #e2e8f0 !important;
+}
+
+.footer-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #e2e8f0;
+  transition: width 0.3s ease;
+}
+
+.footer-links a:hover::after {
+  width: 100%;
+}
+
+/* Landing Page Styles */
+.landing-hero {
+  background: var(--luct-primary);
+  color: var(--luct-white);
+  padding: 100px 0;
+  text-align: center;
+  margin-top: -70px;
+  padding-top: 170px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.features-section {
+  padding: 80px 0;
+  background-color: var(--luct-white);
+}
+
+.feature-card {
+  text-align: center;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  height: 100%;
+  background: var(--luct-white);
+  border: 1px solid #e2e8f0;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  color: var(--luct-primary);
+  margin-bottom: 1rem;
+}
+
+.cta-section {
+  background: var(--luct-secondary);
+  color: var(--luct-white);
+  padding: 80px 0;
+  text-align: center;
+}
+
+/* Dashboard Header Styles */
+.dashboard-header {
+  background: var(--luct-primary);
+  color: var(--luct-white);
+  padding: 2rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+.dashboard-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.dashboard-subtitle {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin-bottom: 0;
+}
+
+/* Dashboard Styles */
+.dashboard-container {
+  min-height: calc(100vh - 200px);
+  padding: 2rem 0;
+}
+
+.dashboard-nav {
+  background: var(--luct-white);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+  border: 1px solid #e2e8f0;
+}
+
+.dashboard-nav .nav-link {
+  color: var(--luct-text) !important;
+  font-weight: 500;
+  padding: 1rem 1.5rem !important;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.dashboard-nav .nav-link.active {
+  color: var(--luct-primary) !important;
+  border-bottom-color: var(--luct-primary);
+  background-color: #f7fafc;
+}
+
+.dashboard-content {
+  background: var(--luct-white);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 2rem;
+  border: 1px solid #e2e8f0;
+}
+
+/* Card Styles */
+.card-custom {
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  background: var(--luct-white);
+  border: 1px solid #e2e8f0;
+}
+
+.card-custom:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Button Styles */
+.btn-custom {
+  background: var(--luct-primary);
+  color: var(--luct-white);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-custom:hover {
+  background: var(--luct-secondary);
+  transform: translateY(-1px);
+  color: var(--luct-white);
+}
+
+/* Back to Home Button */
+.btn-custom.btn-outline-primary {
+  background: transparent;
+  border: 2px solid var(--luct-white);
+  color: var(--luct-white);
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-custom.btn-outline-primary:hover {
+  background: var(--luct-white);
+  color: var(--luct-primary);
+  transform: translateY(-1px);
+}
+
+/* Form Styles */
+.form-control-custom {
+  border: 1px solid #cbd5e0;
+  border-radius: 6px;
+  padding: 10px 12px;
+  transition: all 0.3s ease;
+  background: var(--luct-white);
+}
+
+.form-control-custom:focus {
+  border-color: var(--luct-primary);
+  box-shadow: 0 0 0 2px rgba(26, 54, 93, 0.1);
+}
+
+/* Table Styles */
+.table-custom {
+  background: var(--luct-white);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border: 1px solid #e2e8f0;
+}
+
+.table-custom thead th {
+  background: var(--luct-primary);
+  color: var(--luct-white);
+  border: none;
+  padding: 1rem;
+  font-weight: 600;
+}
+
+.table-custom tbody td {
+  padding: 1rem;
+  border-color: #e2e8f0;
+}
+
+/* Auth Styles */
+.auth-container {
+  background: var(--luct-primary);
+  min-height: 100vh;
+  padding: 2rem 0;
+  padding-top: 90px;
+}
+
+.auth-card {
+  border: none;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--luct-white);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.auth-card .card-body {
+  padding: 2rem;
+}
+
+.auth-icon {
+  display: flex;
+  justify-content: center;
+}
+
+.auth-icon-inner {
+  width: 70px;
+  height: 70px;
+  background: var(--luct-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  color: var(--luct-white);
+}
+
+.auth-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--luct-primary);
+  margin-bottom: 0.5rem;
+}
+
+.auth-subtitle {
+  color: var(--luct-text-light);
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+.form-label-custom {
+  font-weight: 600;
+  color: var(--luct-text);
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.form-control-auth {
+  border: 1px solid #cbd5e0;
+  border-radius: 6px;
+  padding: 10px 12px;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  background: var(--luct-white);
+}
+
+.form-control-auth:focus {
+  border-color: var(--luct-primary);
+  background: var(--luct-white);
+  box-shadow: 0 0 0 2px rgba(26, 54, 93, 0.1);
+}
+
+.form-control-auth:disabled {
+  background: #f7fafc;
+  opacity: 0.7;
+}
+
+.auth-btn {
+  background: var(--luct-primary);
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  color: var(--luct-white);
+}
+
+.auth-btn:hover:not(:disabled) {
+  background: var(--luct-secondary);
+  transform: translateY(-1px);
+  color: var(--luct-white);
+}
+
+.auth-btn:disabled {
+  opacity: 0.7;
+  transform: none;
+}
+
+.auth-divider {
+  text-align: center;
+  margin: 1.5rem 0;
+  position: relative;
+}
+
+.auth-divider::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #e2e8f0;
+}
+
+.auth-divider span {
+  background: var(--luct-white);
+  padding: 0 1rem;
+  color: var(--luct-text-light);
+  font-size: 0.9rem;
+}
+
+.auth-switch-text {
+  color: var(--luct-text-light);
+  font-size: 0.9rem;
+}
+
+.auth-switch-link {
+  color: var(--luct-primary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.auth-switch-link:hover {
+  color: var(--luct-secondary);
+  text-decoration: underline;
+}
+
+/* Back Button Styles */
+.btn-back {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: var(--luct-white);
+  border-radius: 6px;
+  padding: 6px 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-back:hover {
+  background: var(--luct-white);
+  color: var(--luct-primary);
+  transform: translateY(-1px);
+}
+
+/* Loading Spinner */
+.spinner-border-sm {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Stats Section */
+.stats-section {
+  background: var(--luct-white);
+  padding: 60px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  body {
+    padding-top: 60px;
+  }
+
+  .navbar-custom {
+    padding: 0.5rem 0;
+  }
+
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+  
+  .navbar-nav .nav-link {
+    margin: 5px 0;
+    text-align: center;
+  }
+  
+  .footer-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .dashboard-header {
+    padding: 1.5rem;
+  }
+  
+  .dashboard-title {
+    font-size: 1.8rem;
+  }
+  
+  .dashboard-subtitle {
+    font-size: 1rem;
+  }
+  
+  .dashboard-header .d-flex {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .auth-container {
+    padding: 1rem;
+    padding-top: 80px;
+  }
+  
+  .auth-card .card-body {
+    padding: 1.5rem;
+  }
+  
+  .auth-title {
+    font-size: 1.5rem;
+  }
+  
+  .auth-icon-inner {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+
+  .landing-hero {
+    margin-top: -60px;
+    padding-top: 140px;
+  }
+}
+
+@media (max-width: 576px) {
+  .auth-card .card-body {
+    padding: 1.25rem;
+  }
+  
+  .auth-title {
+    font-size: 1.3rem;
+  }
+  
+  .auth-icon-inner {
+    width: 50px;
+    height: 50px;
+    font-size: 1.3rem;
+  }
+
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+
+  .navbar-logo {
+    height: 30px;
+    margin-right: 8px;
+  }
+}
+
+/* Utility Classes */
+.text-luct {
+  color: var(--luct-primary);
+}
+
+.bg-luct {
+  background: var(--luct-primary);
+}
+
+.border-luct {
+  border-color: var(--luct-primary);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Navbar scroll effect */
+.navbar-scrolled {
+  background: var(--navbar-bg);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+}
+
+/* Badge styles */
+.badge-luct {
+  background: var(--luct-primary);
+  color: var(--luct-white);
+}
+
